@@ -1,30 +1,39 @@
 const { Router } = require('express');
+const axios = require("axios");
 const { Videogame, Genres} = require("../db");
 const { APIKEY } = process.env;
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
-const axios = require("axios");
+const routeGenre = require("./routeGenre")
 
 const router = Router();
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
-const api = async () => {
+router.get("/genres", routeGenre)
+
+
+const api = async () => {   //tarda mas de 1 minuto en traer todos los datos
     let dataApi = [];
     for(var i = 1; i <= 5; i++) {
         let urlApi = await axios.get(`https://api.rawg.io/api/games?key=${APIKEY}&page=${i}`);
         await urlApi.data.results.map(elem => {
+            let id = elem.id;
             dataApi.push( {
                 id: elem.id,
                 name: elem.name,
                 img: elem.background_image,
-                description: elem.description,
                 date: elem.released,
                 rating: elem.rating,
-                platform: elem.parent_platforms.map(elem => elem)
+                genre: elem.genres,
+                platform: elem.parent_platforms/* .map(elem => elem) */
             })
         })
     }
+    /* for(var i = 0; i < dataApi.length; i++) {
+        let desc = await axios.get(`https://api.rawg.io/api/games/${dataApi[i].id}?key=${APIKEY}`);
+        dataApi[i].description = await desc.data.description;
+    } */
     return dataApi;
 }
 
@@ -43,7 +52,7 @@ const db = async () => {
 const getAllGames = async () => {
     const apiInfo = await api();
     const dbInfo = await db();
-    const infoTotal = apiInfo.concat(dbInfo);
+    const infoTotal = dbInfo.concat(apiInfo);
     return infoTotal;
 }
 
@@ -61,9 +70,8 @@ router.get("/videogames", async(req, res) => {
         res.status(200).send(games);
     }
 })
-// BUSCAR DE DONDE SACAR LA DESCRIPTION Y GENRES??????
 
-const genApi = async () => {
+/* const genApi = async () => {
     const allGenres = await axios.get(`https://api.rawg.io/api/genres?key=${APIKEY}`);
     const genArray = await allGenres.data.results.map(elem => elem.name);
     genArray.forEach(elem => {
@@ -78,7 +86,7 @@ const genApi = async () => {
 router.get("/genres", async(req, res) => {
     const genres = await genApi();
     res.status(200).send(genres);
-})
+}) */
 
 router.post("/videogame", async(req,res) => {
     await genApi();
