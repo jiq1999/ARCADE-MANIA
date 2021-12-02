@@ -13,11 +13,7 @@ module.exports = async (req, res) => {
                     name: elem.name,
                     img: elem.background_image,
                     rating: elem.rating,
-                    genres: elem.genres.map(elem => {
-                        return {
-                            name: elem.name
-                        }
-                    }),
+                    genres: elem.genres.map(elem => elem.name),
                 })
             })
         }
@@ -34,7 +30,17 @@ module.exports = async (req, res) => {
                 }
             }
         })
-        return dbGames;
+        const dbData = dbGames.map(elem => {
+            return {
+                id: elem.id,
+                name: elem.name,
+                img: elem.img,
+                rating: Number(elem.rating),
+                genres: elem.genres.map(elem => elem.name),
+                fromDB: elem.fromDB
+            }
+        })
+        return dbData;
     }
     
     const getAllGames = async () => {

@@ -2,13 +2,14 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import { Link } from "react-router-dom";
-import { getGames, filterByGenre } from "../actions";
+import { getGames, filterByGenre, filterByOrigin, orderByName, orderByRating } from "../actions";
 import Card from "./Card";
 import Paginado from "./Paginado";
 
 export default function HomePage() {
     const dispatch = useDispatch();
     const allGames = useSelector(state => state.videogames)
+    const [order, setOrder] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
     const [gamesPerPage, setGamesPerPage] = useState(15);
     const indexOfLastGame = currentPage * gamesPerPage;
@@ -29,7 +30,25 @@ export default function HomePage() {
     }
 
     function handleFilterGamesGen(e) {
-        dispatch(filterByGenre(e.target.value))
+        dispatch(filterByGenre(e.target.value));
+    }
+
+    function handleFilterGamesOrig(e) {
+        dispatch(filterByOrigin(e.target.value));
+    }
+
+    function handleOrderGamesName(e) {          //repasar esto, porque set estados locales?? y en los otros no
+        e.preventDefault();
+        dispatch(orderByName(e.target.value));
+        setCurrentPage(1);
+        setOrder(`ORDERED ${e.target.value}`)
+    }
+
+    function handleOrderGamesRat(e) {          //repasar esto, porque set estados locales?? y en los otros no
+        e.preventDefault();
+        dispatch(orderByRating(e.target.value));
+        setCurrentPage(1);
+        setOrder(`ORDERED ${e.target.value}`)
     }
 
     return(
@@ -40,11 +59,11 @@ export default function HomePage() {
                 LOAD ALL GAMES
             </button>
             <div>
-                <select>
+                <select onChange={e => handleOrderGamesName(e)}>
                     <option value="alfa">ALF ASCENDANT</option>     {/* el value permite acceder con la accion */}
                     <option value="alfd">ALF DESCENDANT</option>
                 </select>
-                <select>
+                <select onChange={e => handleOrderGamesRat(e)}>
                     <option value="rata">RATING ASCENDANT</option>
                     <option value="ratd">RATING DESCENDANT</option>
                 </select>
@@ -70,10 +89,10 @@ export default function HomePage() {
                     <option value="Sports">SPORTS</option>
                     <option value="Strategy">STRATEGY</option>
                 </select>
-                <select>
+                <select onChange={e => handleFilterGamesOrig(e)}>
                     <option value="all">ALL</option>
-                    <option value="orig">ORIGINAL</option>
-                    <option value="crea">CREATED</option>
+                    <option value="api">ORIGINAL</option>
+                    <option value="db">CREATED</option>
                 </select>
                 <Paginado
                     gamesPerPage={gamesPerPage}
@@ -89,7 +108,7 @@ export default function HomePage() {
                                         key={elem.id}
                                         name={elem.name} 
                                         img={elem.img} 
-                                        genre={elem.genres.map(elem => elem.name + " ")}
+                                        genre={elem.genres}
                                         rating={elem.rating}
                                     />
                                 </Link>

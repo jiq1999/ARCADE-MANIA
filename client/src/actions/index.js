@@ -18,3 +18,24 @@ export function filterByGenre(payload) {
         payload
     }
 }
+
+export function filterByOrigin(payload) {
+    return {
+        type: "FILTER_BY_ORIGIN",
+        payload
+    }
+}
+
+export function orderByName(payload) {
+    return {
+        type: "ORDER_BY_NAME",
+        payload
+    }
+}
+
+export function orderByRating(payload) {
+    return {
+        type: "ORDER_BY_RATING",
+        payload
+    }
+}
