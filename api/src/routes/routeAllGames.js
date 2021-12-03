@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
                     id: elem.id,
                     name: elem.name,
                     img: elem.background_image,
-                    rating: elem.rating,
+                    rating: parseFloat(elem.rating.toFixed(1)),
                     genres: elem.genres.map(elem => elem.name),
                 })
             })
@@ -34,9 +34,12 @@ module.exports = async (req, res) => {
             return {
                 id: elem.id,
                 name: elem.name,
+                description: elem.description,
                 img: elem.img,
-                rating: Number(elem.rating),
+                released: elem.date,
+                rating: parseFloat(parseFloat(elem.rating).toFixed(1)), //Number(elem.rating))
                 genres: elem.genres.map(elem => elem.name),
+                platform: elem.platform,
                 fromDB: elem.fromDB
             }
         })

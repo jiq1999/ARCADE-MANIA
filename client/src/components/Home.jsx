@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { getGames, filterByGenre, filterByOrigin, orderByName, orderByRating } from "../actions";
 import Card from "./Card";
 import Paginado from "./Paginado";
+import SearchBar from "./SearchBar";
 
 export default function HomePage() {
     const dispatch = useDispatch();
@@ -53,7 +54,9 @@ export default function HomePage() {
 
     return(
         <div>
-            <Link to="/videogame">GAME CREATOR</Link>
+            <button>
+                <Link to="/videogame">GAME CREATOR</Link>
+            </button>
             <h1>VIDEOGAMES</h1>
             <button onClick={e => {handleClick(e)}}>
                 LOAD ALL GAMES
@@ -99,6 +102,7 @@ export default function HomePage() {
                     allGames={allGames.length}
                     paginado={paginado}
                 />
+                <SearchBar/>
                 {
                     currentGames?.map(elem => {
                         return(
