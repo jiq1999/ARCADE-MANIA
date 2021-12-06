@@ -56,6 +56,12 @@ export default function GameCreator() {
                 platform: [...input.platform, e.target.value]
             })
         }
+        else if(!e.target.checked) {
+            setInput({
+                ...input,
+                platform: input.platform.filter(elem => elem !== e.target.value)
+            })
+        }
         setErrors(handleErrors({
             ...input,
             platform: e.target.value
@@ -67,6 +73,12 @@ export default function GameCreator() {
             setInput({
                 ...input,
                 genres: [...input.genres, e.target.value]
+            })
+        }
+        else if(!e.target.checked) {
+            setInput({
+                ...input,
+                genres: input.genres.filter(elem => elem !== e.target.value)
             })
         }
         setErrors(handleErrors({
