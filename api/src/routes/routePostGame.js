@@ -21,7 +21,7 @@ module.exports = async (req, res) => {
         description: description,
         date: date,
         rating: rating,
-        platform: platform
+        platform: platform.map(elem => elem + " ")
     })
     genres.forEach(async genre => {
         let dbGenre = await Genres.findAll({

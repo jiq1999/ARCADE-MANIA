@@ -54,9 +54,7 @@ export default function HomePage() {
 
     return(
         <div>
-            <button>
-                <Link to="/videogame">GAME CREATOR</Link>
-            </button>
+            <Link to="/videogame"><button>GAME CREATOR</button></Link>
             <h1>VIDEOGAMES</h1>
             <button onClick={e => {handleClick(e)}}>
                 LOAD ALL GAMES
@@ -72,25 +70,25 @@ export default function HomePage() {
                 </select>
                 <select onChange={e => handleFilterGamesGen(e)}>
                     <option value="All">ALL</option>
-                    <option value="Action">ACTION</option>
-                    <option value="Adventure">ADVENTURE</option>
-                    <option value="Arcade">ARCADE</option>
-                    <option value="Board Games">BOARD GAMES</option>
-                    <option value="Card">CARD</option>
-                    <option value="Casual">CASUAL</option>
-                    <option value="Educational">EDUCATIONAL</option>
-                    <option value="Family">FAMILY</option>
-                    <option value="Fighting">FIGHTING</option>
-                    <option value="Indie">INDIE</option>
-                    <option value="Massively Multiplayer">MASSIVELY MULTIPLAYER</option>
-                    <option value="Platformer">PLATFORMER</option>
-                    <option value="Puzzle">PUZZLE</option>
-                    <option value="Racing">RACING</option>
-                    <option value="RPG">RPG</option>
-                    <option value="Shooter">SHOOTER</option>
-                    <option value="Simulation">SIMULATION</option>
-                    <option value="Sports">SPORTS</option>
-                    <option value="Strategy">STRATEGY</option>
+                    <option value="Action ">ACTION</option>
+                    <option value="Adventure ">ADVENTURE</option>
+                    <option value="Arcade ">ARCADE</option>
+                    <option value="Board Games ">BOARD GAMES</option>
+                    <option value="Card ">CARD</option>
+                    <option value="Casual ">CASUAL</option>
+                    <option value="Educational ">EDUCATIONAL</option>
+                    <option value="Family ">FAMILY</option>
+                    <option value="Fighting ">FIGHTING</option>
+                    <option value="Indie ">INDIE</option>
+                    <option value="Massively Multiplayer ">MASSIVELY MULTIPLAYER</option>
+                    <option value="Platformer ">PLATFORMER</option>
+                    <option value="Puzzle ">PUZZLE</option>
+                    <option value="Racing ">RACING</option>
+                    <option value="RPG ">RPG</option>
+                    <option value="Shooter ">SHOOTER</option>
+                    <option value="Simulation ">SIMULATION</option>
+                    <option value="Sports ">SPORTS</option>
+                    <option value="Strategy ">STRATEGY</option>
                 </select>
                 <select onChange={e => handleFilterGamesOrig(e)}>
                     <option value="all">ALL</option>

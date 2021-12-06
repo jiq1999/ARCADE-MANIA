@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
           <Route exact path="/home" element={<HomePage />} />
-          <Route exact path="/home/:id" element={<GameDetail />} />
+          <Route path="/details/:id" element={<GameDetail />} />
           <Route exact path="/videogame" element={<GameCreator />} />
         </Routes>
       </div>

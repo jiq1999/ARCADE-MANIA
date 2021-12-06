@@ -6,7 +6,17 @@ module.exports = async (req, res) => {
         let id = req.params.id;
         try {
             if(id.length > 7) {
-                let dataPk = await Videogame.findByPk(id);
+                //let dataPk = await Videogame.findByPk(id);
+                let dataPk = await Videogame.findOne({
+                    where: { id: id},
+                    include: {
+                        model: Genres,
+                        attributes: ["name"],
+                        through: {
+                            attributes: []
+                        }
+                    }
+                })
                 if(dataPk) res.status(200).json(dataPk);
             } else {
                 let urlId = await axios.get(`https://api.rawg.io/api/games/${id}?key=${APIKEY}`);

@@ -28,6 +28,22 @@ export function getGameName(name) {
     }
 }
 
+export function getGameDetail(id) {
+    return async function(dispatch) {
+        try {
+            var json = await axios.get(`http://localhost:3001/videogame/${id}`,{
+                
+            });
+            return dispatch({
+                type: "GET_VIDEOGAME_DETAIL",
+                payload: json.data
+            })
+        } catch(err) {
+            console.log(err);
+        }
+    }
+}
+
 export function getGenres() {
     return async function(dispatch) {
         var json = await axios.get("http://localhost:3001/genres",{
