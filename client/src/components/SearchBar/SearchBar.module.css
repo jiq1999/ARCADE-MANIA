@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;400;600&display=swap');
+
+.card {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+.input {
+    font-family: 'Oswald', sans-serif;
+    height: 30px;
+    width: 250px;
+    margin-right: 5px;
+    border-radius: 0%;
+    border: 0;
+}
+
+.btn {
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #BFBFBF;
+    border: 0;
+    color: black;
+    transition: 0.4s;
+    margin-top: 1px;
+}
+
+.btn:hover {
+    background-color: #D8D8D8;
+}

@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.link {
+    text-decoration: none;
+}
+
+.cards {
+    display:grid;
+    grid-template-columns: 330px 330px 330px;
+    justify-content: space-evenly;
+    align-content: space-between;
+}
+
+.home {
+    min-height: 100vh;
+    background: url("../../images/fondo1.jpg");
+    background-size:cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+.bar {
+    height: 70px;
+    width: 100%;
+    background-color: #8C8C8C;
+    box-shadow: 0px 0px 15px -5px;
+}
+
+.elem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0;
+    padding: 15px 0px 10px 0px;
+    border: 0;
+}
+
+.btnAM {
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 13px;
+}
+
+.linkCG {
+    text-decoration: none;
+    width: 150px;
+    height: 40px;
+    background-color: #FBDF04;
+    transition: 0.4s;
+    display: flex;
+    justify-content: center;
+}
+
+.linkCG:hover {
+    background-color: #FFFF80;
+}
+
+.btnCG {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: black;
+    margin-top: 5px;
+}
+
+.underBar {
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.text {
+    margin: 1px 10px 0px 10px;
+    font-size: 18px;
+    color: black;
+}
+
+.btnClear {
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    width: 90px;
+    height: 30px;
+    align-self: flex-end;
+    background-color: black;
+    border: thin;
+    color: white;
+    transition: 0.4s;
+    margin: 0px 10px 0px 15px;
+    padding: 0;
+}
+
+.btnClear:hover {
+    background-color: #545454;
+}
+
+.select {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    margin: 0px 5px 0px 5px;
+}

@@ -66,18 +66,20 @@ function rootReducer(state = initialState, action) {
         
         case "ORDER_BY_NAME":
             let sortedARr = [];
-            if(action.payload === "alfa") {
+            if(action.payload === "alfd") {
                 sortedARr = state.allVideogames.sort(function(a, b) {
                     if(a.name.toLowerCase() > b.name.toLowerCase()) return 1;
                     else if(b.name.toLowerCase() > a.name.toLowerCase()) return -1;
                     else return 0;
                 })
-            } else {
+            } else if(action.payload === "alfa") {
                 sortedARr = state.allVideogames.sort(function(a, b) {
                     if(a.name.toLowerCase() > b.name.toLowerCase()) return -1;
                     else if(b.name.toLowerCase() > a.name.toLowerCase()) return 1;
                     else return 0;
                 })
+            } else {
+                sortedARr = state.allVideogames
             }
             return {
                 ...state,
@@ -90,10 +92,12 @@ function rootReducer(state = initialState, action) {
                 sortArrRat = state.allVideogames.sort(function(a, b) {
                     return a.rating - b.rating;
                 })
-            } else {
+            } else if(action.payload === "ratd") {
                 sortArrRat = state.allVideogames.sort(function(a, b) {
                     return b.rating - a.rating;
                 })
+            } else {
+                sortArrRat = state.allVideogames
             }
             return {
                 ...state,

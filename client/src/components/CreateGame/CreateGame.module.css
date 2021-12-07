@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.creator {
+    min-height: 100vh;
+    background: url("../../images/creator1.jpg");
+    background-size:cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.link {
+    margin: 15px 0px 0px 15px;
+    width: 90px;
+    height: 40px;
+}
+
+.btn {
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    width: 90px;
+    height: 40px;
+    background-color: black;
+    border: thin;
+    color: white;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    background-color: #545454;
+}
+
+.card {
+    height: 520px;
+    width: 650px;
+    background-color: #E9ECEF;
+    box-shadow: 0px 0px 15px -5px;
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
+.title {
+    font-family: 'Press Start 2P', cursive;
+    margin: 40px 0px 30px 0px;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+}
+
+.name {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: center;
+    margin: 0px 15px 5px 30px;
+}
+
+.nameTitle {
+    font-size: 25px;
+    margin: 0px 10px 0px 10px;
+}
+
+.nameInput {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    height: 25px;
+    width: 220px;
+    border-radius: 0%;
+    margin-top: 4px;
+    border: 1px solid grey;
+}
+
+.relRat {
+    display: flex;
+    flex-direction: row;
+}
+
+.released {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: center;
+    margin: 0px 15px 5px 30px;
+}
+
+.releasedTitle {
+    font-size: 25px;
+    margin: 0px 10px 0px 10px;
+}
+
+.releasedInput {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    height: 25px;
+    width: 40px;
+    border-radius: 0%;
+    margin-top: 5px;
+    border: 1px solid grey;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: center;
+    margin: 0px 15px 5px 0px;
+}
+
+.ratingTitle {
+    font-size: 25px;
+    margin: 0px 10px 0px 10px;
+}
+
+.ratingInput {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    height: 25px;
+    width: 30px;
+    border-radius: 0%;
+    margin-top: 4px;
+    border: 1px solid grey;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-content: center;
+    margin: 0px 15px 5px 30px;
+}
+
+.descriptionTitle {
+    font-size: 25px;
+    margin: 0px 10px 0px 10px;
+}
+
+.descriptionInput {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    resize: none;
+    height: 100px;
+    width: 300px;
+    border-radius: 0%;
+    margin-top: 4px;
+    border: 1px solid grey;
+}
+
+.platform {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: center;
+    margin: 0px 15px 5px 30px;
+}
+
+.platformTitle {
+    font-size: 25px;
+    margin: 5px 10px 0px 10px;
+}
+
+.platformItem {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    margin: 5px 5px 0px 10px;
+}
+
+.genres {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-content: center;
+    margin: 0px 15px 5px 0px;
+}
+
+.gen {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-evenly;
+    align-content: space-between;
+}
+
+.genresTitle {
+    font-size: 25px;
+    margin: 0px 10px 0px 0px;
+}
+
+.genresItem {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    margin: 15px 5px 0px 10px;
+}
+
+.errors {
+    color: red;
+}
+
+.btnSend {
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    width: 90px;
+    height: 40px;
+    background-color: black;
+    border: thin;
+    color: white;
+    transition: 0.4s;
+    margin-top: 20px;
+}
+
+.btnSend:hover {
+    background-color: #545454;
+}

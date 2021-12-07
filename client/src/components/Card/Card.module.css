@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;400;600&display=swap');
+
+.cardContainer {
+    font-family: 'Oswald', sans-serif;
+    color:black;
+    text-decoration: none;
+    width: 330px;
+    height: 400px;
+    padding: 10px 10px;
+    border-radius: 3%;
+    background-color: #E9ECEF;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 35px 0px 35px 0px;
+}
+
+.cardContainer:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px -5px;
+}
+
+.titRat {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.cardTitle {
+    font-size: 20px;
+}
+
+.cardRat {
+    font-size: 15px;
+    color: black;
+    width: 30px;
+    border: 1px solid black;
+    border-radius: 15%;
+}
+
+.hr {
+    width: 310px;
+    color: white
+}
+
+.cardGen {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.gen {
+    font-size: 15px;
+    color: white;
+    background-color: #ADADAD;
+    border: 5px solid #ADADAD;
+    border-radius: 5%;
+}
+
+.cardImg {
+    border-bottom-left-radius: 3%;
+    border-bottom-right-radius: 3%;
+}

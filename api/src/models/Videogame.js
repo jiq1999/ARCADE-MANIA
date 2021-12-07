@@ -16,7 +16,7 @@ module.exports = (sequelize) => {
     },
     img: {
       type: DataTypes.STRING,
-      defaultValue: "https://cdn0.iconfinder.com/data/icons/video-game-32/100/game-pad-video-game-consoles-game-pad-analog-stick-generic-controller-white-512.png",
+      defaultValue: "https://i.imgur.com/2QBi8eF.jpg",
       allowNull: true,
     },
     description: {

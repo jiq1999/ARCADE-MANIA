@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;400;600&display=swap');
+
+.paginado {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.btnPag {
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: white;
+    height: 40px;
+    width: 40px;
+    background-color: #353535 ;
+    border: 0;
+    transition: 0.2s;
+}
+
+.btnPag:hover {
+    background-color: #5A5A5A ;
+}
