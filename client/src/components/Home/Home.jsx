@@ -61,7 +61,7 @@ export default function HomePage() {
                         ARCADE-MANIA
                     </h3>
                     <SearchBar />
-                    <Link className={styles.linkCG} to="/videogame"><a className={styles.btnCG}>+ GAME CREATOR</a></Link>
+                    <Link className={styles.linkCG} to="/videogame"><p className={styles.btnCG}>+ GAME CREATOR</p></Link>
                 </div>
             </div>
             <div className={styles.underBar}>
@@ -111,15 +111,16 @@ export default function HomePage() {
             <div className={styles.cards}>
             {
                 currentGames?.map(elem => {
+                    console.log(elem.id.toString())
                     return(
                         <div className="cards">
                             <Link className={styles.link} to={'/details/' + elem.id}>
                                 <Card
-                                    key={elem.id}
                                     name={elem.name} 
                                     img={elem.img} 
                                     genre={elem.genres}
                                     rating={elem.rating}
+                                    key={elem.id.toString()}
                                 />
                             </Link>
                         </div>
